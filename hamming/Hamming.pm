@@ -14,13 +14,7 @@ sub hamming_distance {
     die 'strands must be of equal length';
   }
 
-  my $hamming_distance = 0;
-
-  for my $i ( 0 .. length($strand1) - 1 ) {
-    $hamming_distance++ if substr( $strand1, $i, 1 ) ne substr( $strand2, $i, 1 );
-  }
-
-  return $hamming_distance;
+  return ($strand1 ^ $strand2) =~ tr/\0//c;
 }
 
 1;
