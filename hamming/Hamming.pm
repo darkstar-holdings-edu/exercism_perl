@@ -19,7 +19,7 @@ sub hamming_distance {
   for my $i ( 0 .. length($strand1) - 1 ) {
     $hamming_distance++ if substr( $strand1, $i, 1 ) ne substr( $strand2, $i, 1 );
   }
-  
+
   return $hamming_distance;
 }
 
